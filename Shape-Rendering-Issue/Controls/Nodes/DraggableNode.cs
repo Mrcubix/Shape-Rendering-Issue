@@ -15,6 +15,17 @@ namespace ShapeRenderingIssue.Controls.Nodes;
 public abstract class DraggableNode : Shape
 {
     /// <summary>
+    ///   Static constructor to mark certain properties as affecting the geometry.
+    /// </summary>
+    /// <remarks>
+    ///   This is required to be able to render the shape, at all.
+    /// </remarks>
+    static DraggableNode()
+    {
+        AffectsGeometry<DraggableNode>(BoundsProperty, StrokeThicknessProperty);
+    }
+
+    /// <summary>
     ///   Whether or not the Control is currently being dragged.
     /// </summary>
     private bool _isDragged = false;

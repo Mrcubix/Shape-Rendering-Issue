@@ -24,12 +24,10 @@
 
         <ItemsControl.DataTemplates>
           <DataTemplate DataType="nodes:RectangleNodeViewModel">
-            <gn:RectangleNode Fill="SkyBlue" Stroke="Black"
-                              Width="{Binding Width}" Height="{Binding Height}" />
+            <gn:RectangleNode Fill="Blue" Stroke="Black" StrokeThickness="2" />
           </DataTemplate>
           <DataTemplate DataType="nodes:CircleNodeViewModel">
-            <gn:CircleNode Fill="SkyBlue" Stroke="Black" 
-                           Width="{Binding Width}" Height="{Binding Height}" />
+            <gn:CircleNode Fill="Blue" Stroke="Black" StrokeThickness="2" />
           </DataTemplate>
         </ItemsControl.DataTemplates>
 
@@ -37,6 +35,8 @@
           <ControlTheme TargetType="ContentPresenter" x:DataType="nodes:NodeViewModel">
             <Setter Property="Canvas.Left" Value="{Binding X}"/>
             <Setter Property="Canvas.Top" Value="{Binding Y}"/>
+            <Setter Property="Width" Value="{Binding Width}"/>
+            <Setter Property="Height" Value="{Binding Height}"/>
           </ControlTheme>
         </ItemsControl.ItemContainerTheme>
 
